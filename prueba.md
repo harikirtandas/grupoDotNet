@@ -1,4 +1,2 @@
-primer archivo
-
-Soy Cami, probando
-
+primer archivo|
+Soy yo
