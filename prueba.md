@@ -1,2 +1,1 @@
-primer archivo|
-Soy yo
+Probando la resolición de conflictos
