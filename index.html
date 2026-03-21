@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git10 - Práctica de comandos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <p class="tag">App de práctica</p>
+        <h1>Aprendé los 10 comandos de Git más usados</h1>
+        <p>
+          Seleccioná un comando para ver qué hace y luego probá el mini quiz para
+          practicar.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Controles de filtros">
+        <label for="levelFilter">Filtrar por nivel:</label>
+        <select id="levelFilter">
+          <option value="all">Todos</option>
+          <option value="basico">Básico</option>
+          <option value="intermedio">Intermedio</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Comandos</h2>
+        <div id="commandsList" class="commands-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="detail" aria-label="Detalle del comando seleccionado">
+        <h2>Detalle</h2>
+        <div id="detailBox" class="detail-box">
+          <p>Elegí un comando para ver su explicación.</p>
+        </div>
+      </section>
+
+      <section class="quiz" aria-label="Mini quiz">
+        <h2>Mini quiz</h2>
+        <p id="quizQuestion">Presioná “Nueva pregunta” para empezar.</p>
+        <div class="quiz-actions">
+          <button id="newQuestionBtn" type="button">Nueva pregunta</button>
+          <button id="showAnswerBtn" type="button" disabled>
+            Mostrar respuesta
+          </button>
+        </div>
+        <div id="quizAnswer" class="quiz-answer" hidden></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --primary: #0f766e;
+  --primary-soft: #ccfbf1;
+  --border: #d1d5db;
+  --danger: #991b1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #e0f2fe, var(--bg) 50%);
+  color: var(--text);
+}
+
+.app {
+  width: min(1000px, 92vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero,
+.controls,
+section,
+.detail,
+.quiz {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.hero h1 {
+  margin: 0.3rem 0;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+select,
+button {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.command-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.command-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.command-card.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.command-name {
+  margin: 0 0 0.45rem;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 1rem;
+}
+
+.level {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.detail-box {
+  min-height: 130px;
+}
+
+.detail-box code,
+.quiz-answer code {
+  background: #f3f4f6;
+  border-radius: 5px;
+  padding: 0.1rem 0.35rem;
+}
+
+.quiz-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.7rem 0;
+}
+
+.quiz-answer {
+  border-left: 4px solid var(--primary);
+  background: #ecfeff;
+  padding: 0.7rem;
+}
+
+.error {
+  color: var(--danger);
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quiz-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .quiz-actions button {
+    width: 100%;
+  }
+}
