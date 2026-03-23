@@ -26,6 +26,11 @@
         </select>
       </section>
 
+      <div id="welcomeBox" class="welcome-box" hidden>
+        <span class="welcome-hand">👋</span>
+        <p id="welcomeMessage" class="welcome-message"></p>
+      </div>
+
       <section>
         <h2>Comandos</h2>
         <div id="commandsList" class="commands-grid" aria-live="polite"></div>
@@ -50,6 +55,14 @@
         <div id="quizAnswer" class="quiz-answer" hidden></div>
       </section>
     </main>
+
+    <div id="nameModal" class="modal-overlay">
+      <div class="modal-box">
+        <h2>¿Quién quiere aprender?</h2>
+        <input id="nameInput" type="text" placeholder="Escribí tu nombre" />
+        <button id="saveNameBtn" type="button">Continuar</button>
+      </div>
+    </div>
 
     <script src="assets/js/app.js"></script>
   </body>

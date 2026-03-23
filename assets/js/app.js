@@ -3,62 +3,62 @@ const commands = [
     name: "git init",
     level: "basico",
     description: "Inicializa un repositorio Git en la carpeta actual.",
-    example: "git init"
+    example: "git init",
   },
   {
     name: "git clone",
     level: "basico",
     description: "Copia un repositorio remoto a tu máquina.",
-    example: "git clone https://github.com/usuario/proyecto.git"
+    example: "git clone https://github.com/usuario/proyecto.git",
   },
   {
     name: "git status",
     level: "basico",
     description: "Muestra el estado de archivos (modificados, staged, etc.).",
-    example: "git status"
+    example: "git status",
   },
   {
     name: "git add",
     level: "basico",
     description: "Agrega archivos al área de staging para el próximo commit.",
-    example: "git add ."
+    example: "git add .",
   },
   {
     name: "git commit",
     level: "basico",
     description: "Guarda los cambios staged en el historial del repositorio.",
-    example: "git commit -m \"Mensaje claro\""
+    example: 'git commit -m "Mensaje claro"',
   },
   {
     name: "git branch",
     level: "intermedio",
     description: "Lista, crea o elimina ramas.",
-    example: "git branch nueva-rama"
+    example: "git branch nueva-rama",
   },
   {
     name: "git checkout",
     level: "intermedio",
     description: "Cambia de rama o recupera archivos (uso clásico).",
-    example: "git checkout main"
+    example: "git checkout main",
   },
   {
     name: "git pull",
     level: "intermedio",
     description: "Trae cambios del remoto y hace merge en tu rama actual.",
-    example: "git pull origin main"
+    example: "git pull origin main",
   },
   {
     name: "git push",
     level: "intermedio",
     description: "Sube tus commits locales al repositorio remoto.",
-    example: "git push origin main"
+    example: "git push origin main",
   },
   {
     name: "git log",
     level: "intermedio",
     description: "Muestra el historial de commits.",
-    example: "git log --oneline --graph"
-  }
+    example: "git log --oneline --graph",
+  },
 ];
 
 const levelFilter = document.getElementById("levelFilter");
@@ -68,6 +68,11 @@ const quizQuestion = document.getElementById("quizQuestion");
 const quizAnswer = document.getElementById("quizAnswer");
 const newQuestionBtn = document.getElementById("newQuestionBtn");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
+const welcomeBox = document.getElementById("welcomeBox");
+const welcomeMessage = document.getElementById("welcomeMessage");
+const nameModal = document.getElementById("nameModal");
+const nameInput = document.getElementById("nameInput");
+const saveNameBtn = document.getElementById("saveNameBtn");
 
 let selectedCommand = null;
 let currentQuiz = null;
@@ -83,7 +88,8 @@ function renderCommands() {
   commandsList.innerHTML = "";
 
   if (filtered.length === 0) {
-    commandsList.innerHTML = '<p class="error">No hay comandos para este filtro.</p>';
+    commandsList.innerHTML =
+      '<p class="error">No hay comandos para este filtro.</p>';
     return;
   }
 
@@ -147,5 +153,28 @@ levelFilter.addEventListener("change", () => {
 
 newQuestionBtn.addEventListener("click", makeQuestion);
 showAnswerBtn.addEventListener("click", revealAnswer);
+saveNameBtn.addEventListener("click", saveUserName);
+
+nameInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    saveUserName();
+  }
+});
+
+renderCommands();
+nameInput.focus();
+
+function saveUserName() {
+  const name = nameInput.value.trim();
+
+  if (name === "") {
+    alert("Por favor, escribí tu nombre.");
+    return;
+  }
+
+  welcomeMessage.textContent = `Hola ${name}, ¿qué deseas aprender?`;
+  welcomeBox.hidden = false;
+  nameModal.classList.add("modal-hidden");
+}
 
 renderCommands();
