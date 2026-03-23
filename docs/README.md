@@ -29,9 +29,32 @@ Ayudar a quienes recién empiezan con Git a:
 
 ## Estructura del proyecto
 
-- `index.html`: estructura de la interfaz.
-- `styles.css`: estilos y diseño responsive.
-- `app.js`: lógica de datos e interacción (filtro, detalle y quiz).
+```
+grupoDotNet/
+├── index.html              # Punto de entrada principal de la aplicación
+├── assets/
+│   ├── css/
+│   │   └── styles.css      # Estilos y diseño responsive
+│   ├── js/
+│   │   └── app.js          # Lógica de datos e interacción (filtro, detalle y quiz)
+│   └── images/             # Recursos gráficos (logos, iconos, etc.)
+├── docs/
+│   ├── README.md           # Este archivo
+│   ├── flow.md             # Documentación del flujo de la aplicación
+│   └── flow-visual.md      # Diagrama visual del flujo
+└── otros/                  # Archivos varios o de prueba
+```
+
+### Descripción de directorios
+
+| Directorio | Contenido |
+|------------|-----------|
+| `assets/` | Recursos estáticos del proyecto (CSS, JS, imágenes) |
+| `assets/css/` | Hojas de estilo CSS |
+| `assets/js/` | Código JavaScript de la aplicación |
+| `assets/images/` | Imágenes estáticas (logos, íconos, etc.) |
+| `docs/` | Documentación del proyecto |
+| `otros/` | Archivos misceláneos o de pruebas |
 
 ## Cómo ejecutar
 
